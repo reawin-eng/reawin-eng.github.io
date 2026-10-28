@@ -1,0 +1,236 @@
+/* ОБЩИЕ СТИЛИ: цвета, шрифты, отступы и оформление блоков */
+body {
+    margin:0;
+    background:#fbf7f0;
+    color:#302b2b;
+    font:17px/1.7 Georgia,'Times New Roman',serif;
+}
+* {
+    box-sizing:border-box;
+}
+header {
+    background:linear-gradient(135deg,#f0e2df,#fbf7f0);
+    border-bottom:1px solid #e6d7d2;
+}
+nav {
+    max-width:1100px;
+    margin:auto;
+    padding:16px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.brand {
+    color:#783e4d;
+    font-weight:bold;
+    text-decoration:none;
+}
+.links {
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+}
+.links a {
+    padding:7px 10px;
+    border-radius:4px;
+    text-decoration:none;
+    color:#302b2b;
+}
+.links a:hover,.links .active {
+    background:#ead9d8;
+    color:#783e4d;
+}
+.hero {
+    max-width:1100px;
+    margin:auto;
+    padding:55px 22px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:35px;
+    align-items:center;
+}
+h1 {
+    font-size:clamp(2.5rem,5vw,4.4rem);
+    line-height:1.1;
+    margin:12px 0;
+}
+h2 {
+    font-size:2.2rem;
+    line-height:1.2;
+}
+h3 {
+    color:#783e4d;
+}
+.eyebrow {
+    color:#783e4d;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font:bold 13px Arial;
+}
+.button {
+    display:inline-block;
+    background:#783e4d;
+    color:white;
+    text-decoration:none;
+    padding:9px 16px;
+    border-radius:4px;
+    margin:8px 6px 0 0;
+    transition:.2s;
+}
+.button:hover {
+    background:#5e2d3a;
+    transform:translateY(-2px);
+}
+section {
+    padding:55px 22px;
+}
+.container {
+    max-width:1100px;
+    margin:auto;
+}
+.soft {
+    background:#f1e5e1;
+}
+.grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+.two {
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:30px;
+}
+.card,.poem {
+    padding:22px;
+    background:#fffdf9;
+    border:1px solid #e6d7d2;
+    border-radius:6px;
+}
+.card:hover {
+    transform:translateY(-2px);
+}
+.placeholder {
+    min-height:250px;
+    border:2px dashed #b99ca2;
+    background:#ffffff70;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:18px;
+    color:#756b68;
+    border-radius:6px;
+}
+.placeholder img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.poems {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+.poem-text {
+    white-space:pre-line;
+}
+.quote {
+    padding:18px;
+    border-left:4px solid #783e4d;
+    background:#fffdf9;
+    font-style:italic;
+}
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+.gallery figure {
+    margin:0;
+}
+.gallery .placeholder {
+    min-height:200px;
+}
+figcaption {
+    font-size:14px;
+    color:#756b68;
+}
+footer {
+    background:#302b2b;
+    color:#fff;
+    padding:25px;
+    text-align:center;
+}
+footer p {
+    margin:4px;
+}
+.timeline {
+    border-left:2px solid #c7aab0;
+    padding-left:22px;
+}
+.timeline article {
+    margin:20px 0;
+}
+.year {
+    color:#783e4d;
+    font-weight:bold;
+}
+.note {
+    padding:15px;
+    background:#fffaf5;
+    border:1px solid #e6d7d2;
+}
+
+/* АДАПТИВНОСТЬ: правила для экранов шириной до 760 пикселей */
+@media(max-width:760px) {
+    .hero,.two {
+        grid-template-columns:1fr;
+    }
+    .grid,.poems,.gallery {
+        grid-template-columns:1fr;
+    }
+    nav {
+        justify-content:center;
+    }
+}
+
+
+/* ФОТОГРАФИИ: единое отображение изображений на страницах */
+.photo-frame {
+    min-height: 250px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #eadfda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.site-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.hero-photo {
+    min-height: 320px;
+}
+.hero-photo .site-photo {
+    min-height: 320px;
+    max-height: 430px;
+}
+.gallery .site-photo {
+    height: 230px;
+    min-height: 230px;
+}
+
+
+/* Отображение добавленных фотографий */
+.image-frame { overflow: hidden; padding: 0; }
+.image-frame img { display: block; width: 100%; height: 100%; max-height: 440px; object-fit: cover; }
+.gallery figure img { display: block; width: 100%; height: 240px; object-fit: cover; border-radius: 10px; cursor: zoom-in; }
+.gallery figure { min-width: 0; }
